@@ -1,149 +1,93 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
 
-## Contexto
+# Lume — Educador Financeiro com IA 💡
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> Agente de educação financeira pessoal, empático e anti-alucinação, desenvolvido como solução para o lab **Bia do Futuro** da [DIO](https://www.dio.me/).
 
 ---
 
-## O Que Você Deve Entregar
+## O que é o Lume?
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+O Lume é um mentor financeiro inteligente que desmistifica finanças pessoais sem usar "financês". Ele analisa o perfil e as transações do usuário para responder dúvidas de forma contextualizada, educativa e sem recomendar ativos específicos — priorizando sempre a autonomia financeira de quem o usa.
 
 ---
 
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## Arquitetura
 
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+Cliente → Streamlit (app.py) → Agente (agente.py) → Ollama / LLM local
+                                       ↑
+                               Contexto injetado via config.py
+                               (perfil, transações, histórico, produtos)
+```
+
+| Componente | Tecnologia |
+|---|---|
+| Interface | Streamlit |
+| LLM | Ollama (`llama3`) rodando localmente |
+| Base de conhecimento | JSON e CSV na pasta `data/` |
+| Orquestração | Python (`requests`, `pandas`) |
+
+---
+
+## Estrutura do Projeto
+
+```
+.
+├── src/
+│   ├── agente.py        # System prompt do Lume + chamada ao Ollama
+│   ├── app.py           # Interface Streamlit
+│   ├── config.py        # Carrega dados e monta contexto para o prompt
+│   └── requirements.txt
+├── data/
+│   ├── perfil_investidor.json       # Perfil e metas do cliente
+│   ├── produtos_financeiros.json    # Catálogo de produtos disponíveis
+│   ├── transacoes.csv               # Histórico de gastos
+│   └── historico_atendimento.csv    # Atendimentos anteriores
+└── docs/
+    ├── 01-documentacao-agente.md    # Persona, arquitetura e segurança
+    ├── 02-base-conhecimento.md      # Estratégia de injeção de contexto
+    ├── 03-prompts.md                # System prompt e edge cases
+    ├── 04-metricas.md               # Cenários de teste e resultados
+    └── 05-pitch.md                  # Roteiro de apresentação
 ```
 
 ---
 
-## Dicas Finais
+## Como executar
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+**Pré-requisitos:** Python 3.14+, [Ollama](https://ollama.com) instalado e rodando.
+
+```bash
+# 1. Instale o modelo local
+ollama pull llama3
+
+# 2. Clone o repositório e instale as dependências
+pip install -r src/requirements.txt
+
+# 3. Execute a aplicação
+streamlit run src/app.py
+```
+
+Acesse `http://localhost:8501` no navegador.
+
+---
+
+## Comportamento do Agente
+
+- Responde **apenas com base nos dados fornecidos** em `data/` — nunca alucina
+- **Não faz recomendações** de ativos específicos (ações, tickers, fundos)
+- Admite quando não sabe e redireciona para o conceito correto
+- **Dados 100% locais** — nenhuma informação sai da máquina do usuário
+
+---
+
+## Documentação
+
+A pasta `docs/` contém toda a documentação do projeto: definição de persona, estratégia de prompts, base de conhecimento, métricas de avaliação e pitch de apresentação.
+
+---
+
+## Lab
+
+Desenvolvido como solução para o **Lab Bia do Futuro** — [Digital Innovation One (DIO)](https://www.dio.me/).
