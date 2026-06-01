@@ -43,7 +43,7 @@ User Prompt (Dinâmico): A pergunta real do cliente é concatenada logo após es
 O prompt final estruturado que o LLM recebe se parece com isto:
 
 ```
-[SYSTEM]: Eu sou o Lume, um assistente financeiro... 
+[SYSTEM]: Você é o Lume, um assistente financeiro... 
 [Regras de Comportamento]
 [CONTEXTO]: Use apenas as seguintes informações para responder: 
 ---------------------------------------------
